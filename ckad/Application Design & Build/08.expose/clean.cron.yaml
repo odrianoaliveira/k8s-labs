@@ -1,0 +1,19 @@
+# k create cronjob clean-tmp --dry-run=client -o yaml --image=busybox --schedule="*/1 * * * *" -- rm -rf /tmp/\* > clean.cron.yaml
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: clean-tmp
+spec:
+  jobTemplate:
+    metadata:
+      name: clean-tmp
+    spec:
+      template:
+        spec:
+          containers:
+            - command: ["sh", "-c", "rm -rf /tmp/*"]
+              image: busybox
+              name: clean-tmp
+          restartPolicy: OnFailure
+  schedule: "*/1 * * * *"

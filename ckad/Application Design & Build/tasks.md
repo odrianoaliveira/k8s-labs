@@ -108,7 +108,7 @@ Create a Pod **mem-limit** using image `nginx` with:
 
   * CPU: `100m`
   * Memory: `64Mi`
-* Limits:
+  * Limits:
 
   * CPU: `200m`
   * Memory: `128Mi`
