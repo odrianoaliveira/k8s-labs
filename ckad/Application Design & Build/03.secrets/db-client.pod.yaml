@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: db-client
+  name: db-client
+spec:
+  volumes:
+    - name: db-secret-volume
+      secret:
+        secretName: db-secret
+  containers:
+  - image: busybox
+    name: db-client
+    command: ["sh", "-c", "tail -f /dev/null"]
+    volumeMounts:
+      - name: db-secret-volume
+        readOnly: true
+        mountPath: "/etc/secret-volume"
