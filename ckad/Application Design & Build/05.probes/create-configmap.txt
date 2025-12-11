@@ -1,0 +1,1 @@
+k create configmap nginx-cfg --dry-run=client --from-file=nginx.conf -o yaml > nginx-cfg.configmap.yaml
