@@ -1,0 +1,21 @@
+---
+# kubectl expose deployment web-svc --cluster-ip='' --port=80 --dry-run=client -o yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-svc
+  name: web-svc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-svc
+  template:
+    metadata:
+      labels:
+        app: web-svc
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
