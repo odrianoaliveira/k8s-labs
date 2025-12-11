@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  COLOR: blue
+  LEVEL: high
+kind: ConfigMap
+metadata:
+  name: color-config

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cm-demo
+  name: cm-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cm-demo
+  template:
+    metadata:
+      labels:
+        app: cm-demo
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        command: ["sh", "-c", "while true; do echo $COLOR $LEVEL; sleep 5; done"]
+        envFrom:
+        - configMapRef:
+            name: color-config
