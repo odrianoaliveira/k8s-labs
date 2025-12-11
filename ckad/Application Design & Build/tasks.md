@@ -32,10 +32,10 @@ Then create a Deployment named **cm-demo** (1 replica) using image `busybox` wit
 command: ["sh", "-c", "while true; do echo $COLOR $LEVEL; sleep 5; done"]
 ```
 
-Inject the values through environment variables using the ConfigMap.
+Inject values from environment variables via the ConfigMap.
 
 
-## **3. Secret Injection Into a Pod
+## 3. Secret Injection Into a Pod
 
 Create a Secret named **db-secret** with:
 
@@ -61,7 +61,7 @@ Create a Deployment named **probe-app** using image `nginx`.
 Configure:
 
 * **Liveness probe**: HTTP GET `/healthz` on port 80
-* **Readiness probe**: HTTP GET `/ready` on port 80
+* **Readiness probe**: HTTP GET `/readyz` on port 80
 * Both should check every **5 seconds**.
 
 ## 6. Jobs & Backoff
