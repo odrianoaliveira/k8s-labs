@@ -1,0 +1,7 @@
+---
+# k patch pod lable-me --patch-file=patch.yaml
+
+metadata:
+  labels:
+    tier: prod
+
