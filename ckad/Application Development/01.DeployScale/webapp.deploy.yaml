@@ -1,0 +1,31 @@
+---
+# k create ns app-deploy
+# k config set-context --current --namespace=app-deploy
+# k apply -f webapp.deploy.yaml
+# k scale --replicas=5 deployment/web-app
+#
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-app
+  name: web-app
+  namespace: app-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - image: nginx:1.25
+        name: nginx
+        ports:
+        - containerPort: 80
+
