@@ -1,0 +1,4 @@
+1. k edit deploy web-app / set invalid image
+2. pod start to fail
+3. k rollout history deploy web-app
+4. k rollout undo deploy web-app
