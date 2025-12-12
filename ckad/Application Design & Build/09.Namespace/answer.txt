@@ -1,0 +1,7 @@
+> k create ns team-a
+
+> kubectl run nginx -n team-a --image=nginx
+pod/nginx created
+
+> k config set-context --current --namespace=team-a
+Context "kind-ckad" modified.
