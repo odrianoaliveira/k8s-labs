@@ -1,0 +1,59 @@
+ k create ns observability
+namespace/observability created
+
+ k apply -f pod.yaml
+pod/api-pod created
+
+
+ k describe pod api-pod
+
+Restart Count:  0
+
+
+ k logs api-pod --tail=20
+Mon Dec 15 17:13:07 UTC 2025 - API request handled: 40
+Mon Dec 15 17:13:09 UTC 2025 - API request handled: 41
+Mon Dec 15 17:13:11 UTC 2025 - API request handled: 42
+Mon Dec 15 17:13:13 UTC 2025 - API request handled: 43
+Mon Dec 15 17:13:15 UTC 2025 - API request handled: 44
+Mon Dec 15 17:13:17 UTC 2025 - API request handled: 45
+Mon Dec 15 17:13:19 UTC 2025 - API request handled: 46
+Mon Dec 15 17:13:21 UTC 2025 - API request handled: 47
+Mon Dec 15 17:13:23 UTC 2025 - API request handled: 48
+Mon Dec 15 17:13:25 UTC 2025 - API request handled: 49
+Mon Dec 15 17:13:27 UTC 2025 - API request handled: 50
+Mon Dec 15 17:13:29 UTC 2025 - API request handled: 51
+Mon Dec 15 17:13:31 UTC 2025 - API request handled: 52
+Mon Dec 15 17:13:33 UTC 2025 - API request handled: 53
+Mon Dec 15 17:13:35 UTC 2025 - API request handled: 54
+Mon Dec 15 17:13:37 UTC 2025 - API request handled: 55
+Mon Dec 15 17:13:39 UTC 2025 - API request handled: 56
+Mon Dec 15 17:13:41 UTC 2025 - API request handled: 57
+Mon Dec 15 17:13:43 UTC 2025 - API request handled: 58
+Mon Dec 15 17:13:45 UTC 2025 - API request handled: 59
+
+
+ k logs api-pod --tail=20 > /tmp/api-pod.log
+
+󰀵 I526407  …/ckad/Application Observability & Maintenance/01.PodHealthLogs   main ?   18:15 
+ cat /tmp/api-pod.log
+Mon Dec 15 17:15:03 UTC 2025 - API request handled: 98
+Mon Dec 15 17:15:05 UTC 2025 - API request handled: 99
+Mon Dec 15 17:15:07 UTC 2025 - API request handled: 100
+Mon Dec 15 17:15:09 UTC 2025 - API request handled: 101
+Mon Dec 15 17:15:11 UTC 2025 - API request handled: 102
+Mon Dec 15 17:15:13 UTC 2025 - API request handled: 103
+Mon Dec 15 17:15:15 UTC 2025 - API request handled: 104
+Mon Dec 15 17:15:17 UTC 2025 - API request handled: 105
+Mon Dec 15 17:15:19 UTC 2025 - API request handled: 106
+Mon Dec 15 17:15:21 UTC 2025 - API request handled: 107
+Mon Dec 15 17:15:23 UTC 2025 - API request handled: 108
+Mon Dec 15 17:15:25 UTC 2025 - API request handled: 109
+Mon Dec 15 17:15:27 UTC 2025 - API request handled: 110
+Mon Dec 15 17:15:29 UTC 2025 - API request handled: 111
+Mon Dec 15 17:15:31 UTC 2025 - API request handled: 112
+Mon Dec 15 17:15:33 UTC 2025 - API request handled: 113
+Mon Dec 15 17:15:35 UTC 2025 - API request handled: 114
+Mon Dec 15 17:15:37 UTC 2025 - API request handled: 115
+Mon Dec 15 17:15:39 UTC 2025 - API request handled: 116
+Mon Dec 15 17:15:41 UTC 2025 - API request handled: 117
