@@ -1,0 +1,26 @@
+kubectl rollout pause deployment web-app
+
+k set image deploy web-app nginx=nginx:1.27
+
+ kubectl rollout status deployment web-app
+
+Waiting for deployment "web-app" rollout to finish: 0 out of 3 new replicas have been updated...
+
+ kubectl rollout resume deployment web-app
+
+deployment.apps/web-app resumed
+
+󰀵 I526407  …/k8s-labs/ckad/Application Development   main ?   17:33 
+ kubectl rollout status deployment web-app
+
+Waiting for deployment "web-app" rollout to finish: 2 out of 3 new replicas have been updated...
+
+
+Waiting for deployment "web-app" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "web-app" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "web-app" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web-app" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web-app" rollout to finish: 1 old replicas are pending termination...
+deployment "web-app" successfully rolled out
+
+
